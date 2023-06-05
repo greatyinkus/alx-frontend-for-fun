@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+  position: relative;
+  color: hsl(341, 74%, 31%);
+}
+
+a::before {
+  content: "";
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: 0.9s ease;
+}
+
+a:hover::before {
+  left: 0;
+  background-color: hsl(341, 74%, 31%);
+  width: 100%;
+}

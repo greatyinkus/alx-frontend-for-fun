@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 5rem;
+  position: relative;
+}
+
+.menu-line-1,
+.menu-line-2,
+.menu-line-3 {
+  background-color: hwb(0 100% 0%);
+  height: 1px;
+  width: 45%;
+  margin: 0.2rem;
+  transform: rotate(0);
+  transition: transform 0.1s;
+}
+.menu-open {
+  visibility: hidden;
+}
+
+.menu-open:checked + .menu-open-button,
+.menu-item {
+  height: 3rem;
+  width: 3rem;
+}
+.menu-open-button {
+  flex-direction: column;
+  height: 3rem;
+  width: 3rem;
+  z-index: 1;
+}
+.menu-open-button:hover {
+  transform: scale(1.1);
+}
+.menu-open-button,
+.menu-item {
+  background-color: hwb(349 11% 20%);
+  border: 1px solid hwb(349 2% 42%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.menu-item {
+  text-decoration: none;
+  top: 0;
+  font-size: 1rem;
+  visibility: hidden;
+  transition: top 1s;
+  z-index: 0;
+  color: hwb(0 100% 0%);
+}
+.menu-item:hover {
+  background-color: hwb(0 100% 0%);
+}
+.menu-item:hover i {
+  color: hwb(349 2% 42%);
+}
+i {
+  color: hwb(0 100% 0%);
+}
+.menu-open:checked + .menu-open-button .menu-line-1,
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  transform-origin: left;
+  margin-left: 0.7rem;
+  transition: transform 0.3s ease-in-out;
+}
+.menu-open:checked + .menu-open-button .menu-line-1 {
+  transform: rotate(45deg);
+}
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  transform: rotate(-45deg);
+}
+.menu-open:checked + .menu-open-button .menu-line-2 {
+  visibility: hidden;
+}
+.menu-open:checked ~ .menu-item {
+  visibility: visible;
+}
+.menu-open:checked ~ .menu-item:nth-of-type(1) {
+  transform: translateY(4rem);
+}
+.menu-open:checked ~ .menu-item:nth-of-type(2) {
+  transform: translateY(7.4rem);
+}
+.menu-open:checked ~ .menu-item:nth-of-type(3) {
+   transform: translateY(10.8rem);
+}
+.menu-open:checked ~ .menu-item:nth-of-type(4) {
+   transform: translateY(14.2rem);
+}
+.menu-open:checked ~ .menu-item:nth-of-type(5) {
+   transform: translateY(17.6rem);
+}
