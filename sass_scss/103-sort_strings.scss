@@ -1,0 +1,6 @@
+@import "103-sort_list";
+@import 'func';
+
+$sorted: sort($lists);
+@debug $sorted;
+
